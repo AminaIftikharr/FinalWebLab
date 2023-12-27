@@ -1,25 +1,25 @@
 import { BOOK_MISSION, JOIN_MISSION } from './actionTypes';
 
 const initialState = {
-  bookedMissions: [],
-  joinedMissions: [],
+bookedMissions: [],
+joinedMissions: [],
 };
 
 const missionReducer = (state = initialState, action) => {
-  switch (action.type) {
+switch (action.type) {
     case BOOK_MISSION:
-      return {
+    return {
         ...state,
         bookedMissions: [...state.bookedMissions, action.payload.missionId],
-      };
+    };
     case JOIN_MISSION:
-      return {
+    return {
         ...state,
         joinedMissions: [...state.joinedMissions, action.payload.missionId],
-      };
+    };
     default:
-      return state;
-  }
+    return state;
+}
 };
 
 export default missionReducer;

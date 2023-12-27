@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
 
 const Dragons = () => {
-  const [dragons, setDragons] = useState([]);
+const [dragons, setDragons] = useState([]);
 
-  useEffect(() => {
+useEffect(() => {
     const fetchDragons = async () => {
-      try {
+    try {
         const response = await fetch('https://api.spacexdata.com/v4/dragons');
         const data = await response.json();
         setDragons(data);
-      } catch (error) {
+    } catch (error) {
         console.error('Error fetching dragons:', error);
-      }
+    }
     };
 
     fetchDragons();
-  }, []);
+}, []);
 
 };
 

@@ -3,31 +3,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "./path-to-your-redux-slice";
 
 const MyProfile = () => {
-  const dispatch = useDispatch();
-  const { isLoading, data, isError } = useSelector((state) => state.data);
+const dispatch = useDispatch();
+const { isLoading, data, isError } = useSelector((state) => state.data);
 
-  useEffect(() => {
+useEffect(() => {
     dispatch(fetchData());
-  }, [dispatch]);
+}, [dispatch]);
 
-  if (isLoading) {
+if (isLoading) {
     return <p>Loading...</p>;
-  }
+}
 
-  if (isError) {
+if (isError) {
     return <p>Error loading data</p>;
-  }
+}
 
-  return (
+return (
     <div>
-      <h1>My Profile</h1>
-      {data && (
+    <h1>My Profile</h1>
+    {data && (
         <div>
-          <p>Name: {data.name}</p>
+        <p>Name: {data.name}</p>
         </div>
-      )}
+    )}
     </div>
-  );
+);
 };
 
 export default MyProfile;

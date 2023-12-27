@@ -3,25 +3,25 @@ import { connect } from 'react-redux';
 import { bookMission, joinMission } from './actions';
 
 const MissionComponent = ({ bookMission, joinMission, missions }) => {
-  const missionId = 1;
+const missionId = 1;
 
-  const handleBookMission = () => {
+const handleBookMission = () => {
     bookMission(missionId);
-  };
+};
 
-  const handleJoinMission = () => {
+const handleJoinMission = () => {
     joinMission(missionId);
-  };
+};
 
-  return (
+return (
     <div>
-      <h1>Mission Component</h1>
-      <button onClick={handleBookMission}>Book Mission</button>
-      <button onClick={handleJoinMission}>Join Mission</button>
-      <p>Booked Missions: {missions.bookedMissions.join(', ')}</p>
-      <p>Joined Missions: {missions.joinedMissions.join(', ')}</p>
+    <button onClick={handleBookMission}>Book Mission</button>
+    <button onClick={handleJoinMission}>Join Mission</button>
+    <p>Booked Missions: {missions.bookedMissions.join(', ')}</p>
+    <p>Joined Missions: {missions.joinedMissions.join(', ')}</p>
+    <h1>Mission Component</h1>
     </div>
-  );
+);
 };
 
 const mapStateToProps = (state) => ({
